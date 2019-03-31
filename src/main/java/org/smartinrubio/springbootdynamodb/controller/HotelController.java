@@ -37,7 +37,7 @@ public class HotelController {
         return ResponseEntity.ok("Data Loaded");
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<Hotel> readAll() {
         return Stream.generate(() -> repository.findAll().iterator().next()).collect(Collectors.toList());
     }
